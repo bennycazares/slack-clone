@@ -8,7 +8,7 @@ class User < ApplicationRecord
   validates :name, format: { with: /\A[a-zA-Z][a-zA-Z0-9]+\z/,
     message: "must start with a letter and only contain letters and numbers" }
 
-  has_secure_password
+ attr_accessor :password, :password_confirmation
 
-  attachment :photo
+  # attachment :photo
 end
