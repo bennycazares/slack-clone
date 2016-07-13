@@ -1,3 +1,10 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get 'home/index'
+
+  root 'home#index'
+
+  get 'sign_in' =>'sessions#new', as: :sign_in
+  post 'sign_in' => 'sessions_create'
+  get 'sign_out'=> 'sessions#delete', as: :sign_out
+
 end
